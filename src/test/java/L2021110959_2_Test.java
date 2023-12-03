@@ -14,7 +14,7 @@ public class L2021110959_2_Test {
         assertEquals("abc",f.removeDuplicateLetters("abc"));
         assertEquals("cdba",f.removeDuplicateLetters("cdba"));
         assertEquals("abcd",f.removeDuplicateLetters("abcddd"));
-        assertEquals("cbas",f.removeDuplicateLetters("ccccbbaass"));
+        assertEquals("cbas",f.removeDuplicateLetters("cccccbbaass"));
 
     }
 }
