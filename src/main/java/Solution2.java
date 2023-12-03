@@ -21,6 +21,7 @@ public class Solution2 {
         boolean[] vis = new boolean[26];
         int[] num = new int[26];
         for (int i = 0; i < s.length(); i++) {
+            //测试更改会否自动merge
             num[s.charAt(i) - 'a']++;
         }
 
