@@ -11,7 +11,7 @@ public class L2021110959_2_Test {
     @Test
     public void testSolution2(){
         Solution2 f = new Solution2();
-        assertEquals("abc",f.removeDuplicateLetters("abc"));
+        assertEquals("abcd",f.removeDuplicateLetters("abcd"));
         assertEquals("cdba",f.removeDuplicateLetters("cdba"));
         assertEquals("abcd",f.removeDuplicateLetters("abcddd"));
         assertEquals("cbas",f.removeDuplicateLetters("cccccbbaass"));
