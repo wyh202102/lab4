@@ -18,3 +18,38 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Run tests with Maven
         run: mvn -B test --file pom.xml
+
+
+name: Auto Merge on JUnit Pass
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '11'
+
+      - name: Build and run JUnit tests
+        run: |
+          mvn test
+
+      - name: Auto merge on JUnit pass
+        if: success() && github.event_name == 'pull_request'
+        run: |
+          git checkout ${{ github.event.pull_request.base.ref }}
+          git merge --ff-only ${{ github.event.pull_request.head.sha }}
+          git push origin ${{ github.event.pull_request.base.ref }}
+
