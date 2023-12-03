@@ -8,6 +8,7 @@ public class L2021110959_2_Test {
     //测试目的：测试函数功能：去除字符串中重复的字母，使得每个字母只出现一次。需保证返回结果的字典序最小（要求不能打乱其他字符的相对位置）。
     //测试用例：没有重复字母+按字典序排列：abc 没有重复字母+不按字典序排列：cdba
     //        有重复字母+按字典序排列：aaabcddd 有重复字母+不按字典序排序：ccccbbaass
+    //checkfix
     @Test
     public void testSolution2(){
         Solution2 f = new Solution2();
