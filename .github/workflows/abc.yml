@@ -6,7 +6,7 @@ jobs:
   steps:
     - name: Checkout the repository
   uses: actions/checkout@74ed895d2add2dde989ad55ca039d6420de78144
-    - name: Set up JDK 11
+    - name: Setup Java JDK
   uses: actions/setup-java@74ed895d2add2dde989ad55ca039d6420de78144
   with:
   java-version: 11
